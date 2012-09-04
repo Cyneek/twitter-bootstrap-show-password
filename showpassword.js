@@ -14,12 +14,14 @@
 	$.fn.extend({
 		showPassword: function() {	
 
-			input_password	= $(this);
+			var input_password	= $(this);
 
 			// Create the wrap and append the icon
 			input_password.wrap('<div class="input-append" />').after('<span class="add-on"><i class="icon-eye-open"></i></span>');
 
 			var icon_password	= input_password.next().find('.icon-eye-open');
+
+			// Add the cursor and the tooltip
 			icon_password.css('cursor', 'help').tooltip();
 
 			input_password.on({
