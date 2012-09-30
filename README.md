@@ -34,6 +34,8 @@ And then, call the plugin in the password input.
 ### 0.5
 * First commit. Yay.
 
+### 0.6
+* Changed some callbacks and added the "click" trigger.
 
 ## Future changes
 
