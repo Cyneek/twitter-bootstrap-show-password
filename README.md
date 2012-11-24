@@ -28,14 +28,23 @@ And then, call the plugin in the password input.
 
 	$('#inputPassword').showPassword();
 
+You can define the color of the icon (black by default) passing the option:
+
+	$('#inputPassword').showPassword({
+		white	: true
+	});
+
 
 ## Change log
 
-### 0.5
-* First commit. Yay.
+### 0.7
+* Added the icon color option.
 
 ### 0.6
 * Changed some callbacks and added the "click" trigger.
+
+### 0.5
+* First commit. Yay.
 
 ## Future changes
 
