@@ -1,7 +1,7 @@
 /*
 *	@name							Twitter Bootstrap Show Password
 *	@descripton						
-*	@version						0.6
+*	@version						0.7
 *	@requires						Jquery 1.8.1
 *
 *	@author							Jeroen van Meerendonk
@@ -15,12 +15,23 @@
 */
 (function($){
 	$.fn.extend({
-		showPassword: function() {
+		showPassword: function(options) {
+
+			var defaults	= {
+				white	: false
+			}
+			var settings	= $.extend({}, defaults, options);
 
 			var input_password	= $(this);
+			var icon_white		= '';
+
+			if (settings.white)
+			{
+				var icon_white	= ' icon-white';
+			}
 
 			//create the icon and assign 
-			var icon_password = $('<span tabindex="100" class="add-on"><i class="icon-eye-open"></i></span>').css('cursor', 'help').tooltip({trigger:'click'});
+			var icon_password = $('<span tabindex="100" class="add-on"><i class="icon-eye-open' + icon_white + '"></i></span>').css('cursor', 'help').tooltip({trigger:'click'});
 			
 			input_password.on({
 				input	: function() {
@@ -31,6 +42,6 @@
 			// Create the wrap and append the icon
 			input_password.wrap('<div class="input-append" />').after(icon_password);
 
-        }
-    });
+		}
+	});
 })(jQuery);
