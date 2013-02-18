@@ -28,14 +28,20 @@ And then, call the plugin in the password input.
 
 	$('#inputPassword').showPassword();
 
-You can define the color of the icon (black by default) passing the option:
+You can define the color of the icon (black by default) or a custom tooltip text passing the options:
 
 	$('#inputPassword').showPassword({
-		white	: true
+		white	: true,
+		message	: 'Click here, dummie!'
 	});
 
 
 ## Change log
+
+### 0.9
+* Code refactoring
+* Switched to inputs instead of a tooltip.
+* Added option 'message' to show a custom text in the tooltip.
 
 ### 0.7
 * Added the icon color option.
