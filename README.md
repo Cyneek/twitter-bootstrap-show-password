@@ -6,7 +6,7 @@ It's a very simple jQuery plugin that shows the content of a password input, so 
 ## Requirements
 
 * [Twitter Bootstrap](http://twitter.github.com/bootstrap/index.html) 2.1.0 and the [Tooltip plugin](http://twitter.github.com/bootstrap/javascript.html#tooltips).
-* [jQuery](http://jquery.com) 1.8.1.
+* [jQuery](http://jquery.com) 1.9.0.
 
 
 ## Usage
