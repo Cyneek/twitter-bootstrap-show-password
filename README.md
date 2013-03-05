@@ -38,6 +38,9 @@ You can define the color of the icon (black by default) or a custom tooltip text
 
 ## Change log
 
+### 0.9.5
+* Bug solving (changed display method and defined the width of the new input).
+
 ### 0.9
 * Code refactoring
 * Switched to inputs instead of a tooltip.

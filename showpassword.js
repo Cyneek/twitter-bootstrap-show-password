@@ -1,7 +1,7 @@
 /*
 *	@name							Twitter Bootstrap Show Password
 *	@descripton						
-*	@version						0.9
+*	@version						0.9.5
 *	@requires						Jquery 1.8.1
 *
 *	@author							Jeroen van Meerendonk
@@ -24,7 +24,7 @@
 			var defaults	= {
 				white	: false,
 				message	: 'Click here to see/hide your password'
-			}, settings, input_password, input_normal, icon_white, icon_password;
+			}, settings, input_password, input_normal, display, icon_white, icon_password;
 
 			settings		= $.extend({}, defaults, options);
 
@@ -35,8 +35,11 @@
 				icon_white	= ' icon-white';
 			}
 
+			// Get the same display property
+			display			= input_password.css('display');
+
 			// Create the new field
-			input_normal	= $('<input type="text">').hide();
+			input_normal	= $('<input type="text">').css('width', input_password.css('width')).hide();
 
 			// Create the icon and assign 
 			icon_password = $('<span tabindex="100" title="' + settings.message + '" class="add-on"><i class="icon-eye-open' + icon_white + '"></i></span>').css('cursor', 'pointer').tooltip();
@@ -52,6 +55,14 @@
 			});
 			icon_password.on({
 				click	: function () {
+					if (input_password.is(':visible')) {
+						input_password.hide();
+						input_normal.css('display', display);
+					} else {
+						input_normal.hide();
+						input_password.show();
+					}
+
 					$(this).parent().find('input').toggle();
 					$(this).find('i').toggleClass('icon-eye-open').toggleClass('icon-eye-close');
 				}
