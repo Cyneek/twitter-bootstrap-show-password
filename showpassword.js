@@ -24,7 +24,7 @@
 			var defaults	= {
 				white	: false,
 				message	: 'Click here to see/hide your password'
-			}, settings, input_password, input_normal, icon_white, icon_password;
+			}, settings, input_password, input_normal, display, icon_white, icon_password;
 
 			settings		= $.extend({}, defaults, options);
 
@@ -34,6 +34,9 @@
 			if (settings.white) {
 				icon_white	= ' icon-white';
 			}
+
+			// Get the same display property
+			display			= input_password.css('display');
 
 			// Create the new field
 			input_normal	= $('<input type="text">').css('width', input_password.css('width')).hide();
@@ -52,6 +55,14 @@
 			});
 			icon_password.on({
 				click	: function () {
+					if (input_password.is(':visible')) {
+						input_password.hide();
+						input_normal.css('display', display);
+					} else {
+						input_normal.hide();
+						input_password.show();
+					}
+
 					$(this).parent().find('input').toggle();
 					$(this).find('i').toggleClass('icon-eye-open').toggleClass('icon-eye-close');
 				}
