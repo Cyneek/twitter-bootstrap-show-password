@@ -1,7 +1,7 @@
 /*
 *	@name							Twitter Bootstrap Show Password
 *	@descripton						
-*	@version						0.9
+*	@version						0.9.5
 *	@requires						Jquery 1.8.1
 *
 *	@author							Jeroen van Meerendonk
