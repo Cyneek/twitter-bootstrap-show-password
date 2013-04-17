@@ -39,7 +39,7 @@
 			display			= input_password.css('display');
 
 			// Create the new field
-			input_normal	= $('<input type="text">').css('width', input_password.css('width')).hide();
+			input_normal	= $('<input type="text">').val(input_password.val()).css('width', input_password.css('width')).hide();
 
 			// Create the icon and assign 
 			icon_password = $('<span tabindex="100" title="' + settings.message + '" class="add-on"><i class="icon-eye-open' + icon_white + '"></i></span>').css('cursor', 'pointer').tooltip();
