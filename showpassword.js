@@ -1,7 +1,7 @@
 /*
 *	@name							Twitter Bootstrap Show Password
 *	@descripton						
-*	@version						0.9.5
+*	@version						1.0
 *	@requires						Jquery 1.8.1
 *
 *	@author							Jeroen van Meerendonk
@@ -41,30 +41,24 @@
 			// Create the new field
 			input_normal	= $('<input type="text">').val(input_password.val()).css('width', input_password.css('width')).hide();
 
-			// Create the icon and assign 
+			// Create the icon and assign
 			icon_password = $('<span tabindex="100" title="' + settings.message + '" class="add-on"><i class="icon-eye-open' + icon_white + '"></i></span>').css('cursor', 'pointer').tooltip();
-			input_password.on({
-				input	: function () {
-					$(this).next().val($(this).val());
-				}
+			input_password.on('input', function () {
+				$(this).next().val($(this).val());
 			});
-			input_normal.on({
-				input	: function () {
-					$(this).prev().val($(this).val());
-				}
+			input_normal.on('input', function () {
+				$(this).prev().val($(this).val());
 			});
-			icon_password.on({
-				click	: function () {
-					if (input_password.is(':visible')) {
-						input_password.hide();
-						input_normal.css('display', display);
-					} else {
-						input_normal.hide();
-						input_password.css('display', display);
-					}
+			icon_password.on('click', function () {
+				if (input_password.is(':visible')) {
+					input_password.hide();
+					input_normal.css('display', display);
+				} else {
+					input_normal.hide();
+					input_password.css('display', display);
+				}
 
-					$(this).find('i').toggleClass('icon-eye-open').toggleClass('icon-eye-close');
-				}
+				$(this).find('i').toggleClass('icon-eye-open').toggleClass('icon-eye-close');
 			});
 			// Create the wrap and append the icon
 			input_password.wrap('<div class="input-append" />').after(icon_password).after(input_normal);
