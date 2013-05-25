@@ -38,11 +38,16 @@ You can define the color of the icon (black by default) or a custom tooltip text
 
 ## Change log
 
+### 1.0
+* Code refactoring.
+* Handle existing password values (thanks, [realityking](https://github.com/realityking)).
+* Bug fixed.
+
 ### 0.9.5
 * Bug solving (changed display method and defined the width of the new input).
 
 ### 0.9
-* Code refactoring
+* Code refactoring.
 * Switched to inputs instead of a tooltip.
 * Added option 'message' to show a custom text in the tooltip.
 
